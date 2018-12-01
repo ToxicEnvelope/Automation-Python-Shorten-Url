@@ -91,10 +91,10 @@ from the following link : `https://store.docker.com/editions/community/docker-ce
 3. After you've done this, run `./start-chrome-node.sh` or `./start-firefox-node.sh`
 to start a node.
 4. Make sure your `BaseTest.py` module configuration
-sets `setUp(self, dokerized=True)` to ensure running NOT in Docker
+sets `setUp(self, dokerized=True)` to ensure running IN Docker mode.
 5. Run the automation from `UrlShortenServiceTest.py`
 
 ##### [Unittest Base]
 1. Make sure your `BaseTest.py` module configuration
-sets `setUp(self, dokerized=False)` to ensure running NOT in Docker
+sets `setUp(self, dokerized=False)` to ensure running NOT in Docker mode.
 2. Run the automation from `UrlShortenServiceTest.py`
