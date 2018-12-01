@@ -70,6 +70,14 @@ We divide this framework to some modules
 
 #
 # HOW-TO
+##### [IMPORTANT Python Libs]
+1. In case your machine does't contain `Python 3.x`, please download it to your machine
+2. Once `Python 3.x` is installed, open your `commad-prompt` or `terminal`
+and use the following commands:
+- `pip install --upgrade pip`   -   to ensure your pip is up-to-date
+- `pip install unittest`        -   to ensure your unittest is up-to-date
+- `pip install selenium`        -   to install Selenium libraries
+
 ##### [DOCKER]
 1. If you use a docker, please make sure to install it 
 from the following link : `https://store.docker.com/editions/community/docker-ce-desktop-mac`
