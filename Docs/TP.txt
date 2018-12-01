@@ -1,7 +1,7 @@
-Test Plan Keywee Assingment:
+Test Plan KeyWee Assignment:
 
 
-Feature: Url Shortner Service - https://bitly.com/
+Feature: Url Shorten Service - https://bitly.com/
 
 
 -- (1) E2E--
