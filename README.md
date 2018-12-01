@@ -2,39 +2,39 @@
 ###This is a sample repository for Selenium + Python 3.x
 This repository made for purposes learning and education
 
-#
-### [Description]
+
+###[Description]
 This Framework use `Python 3.x` inside,
 We recommend you to visit `https://python.org` for reference.
 
 We divide this framework to some modules 
 
 #
-#####[BasePage.py] `src.main.base.BasePage`
+####[BasePage.py] `src.main.base.BasePage`
     BasePage        -   This module responsible of the  
                         main functionalitieso f selenium  
 
 #
-#####[Wait.py] `src.main.base.utils.Wait`
+####[Wait.py] `src.main.base.utils.Wait`
     Wait            -   This module responsible of handling
                         smart waiting for different  
                         type of scenarios in the DOM
 
-#                        
-#####[Logger.py] `src.main.base.utils.Logger`
+#
+####[Logger.py] `src.main.base.utils.Logger`
     Logger          -   This module responsible to 
                         log and record all the actions 
                         taken by the framework and will
                         contain critical information for
                         log analysis and errors during runtime 
-                        
+
 #
-#####[BitlyHomePage.py] `src.main.base.pages.BitlyHomePage`
+####[BitlyHomePage.py] `src.main.base.pages.BitlyHomePage`
     BitlyHomePage   -   This module represents the
                         POM. It contains some functional
 
 #
-#####[BaseTes.py] `src.test.BaseTest`
+####[BaseTes.py] `src.test.BaseTest`
     BaseTest        -   This module is the core module 
                         for tests, all tests inherit some
                         functionalities from it. It handles
@@ -43,8 +43,8 @@ We divide this framework to some modules
                         Also, will handle the configuration of 
                         Selenium/Docker Usage.
 
-#                        
-#####[UrlShortenService.py] `src.test.e2e.UrlShortenServiceTest`
+#
+####[UrlShortenService.py] `src.test.e2e.UrlShortenServiceTest`
     UrlShortenService   -   This module represents the
                             test of our POM based on UI
                             using Selenium with Unittest
