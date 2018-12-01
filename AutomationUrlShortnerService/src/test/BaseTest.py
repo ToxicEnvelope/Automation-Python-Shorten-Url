@@ -17,6 +17,3 @@ class BaseTest(object):
 
     def tearDown(self):
         self.get_driver().close()
-
-    def open_new_tab(self, new_url):
-        self.driver.execute_script('window.open('+new_url+', "_blank");')
