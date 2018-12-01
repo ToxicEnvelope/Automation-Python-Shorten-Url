@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import unittest
-from AutomationUrlShortnerService.src.test.BaseTest import BaseTest
-from AutomationUrlShortnerService.src.main.base.pages.BitlyHomePage import BitlyHomePage
+from src.test.BaseTest import BaseTest
+from src.main.base.pages.BitlyHomePage import BitlyHomePage
 
 
 class UrlShortenService(BaseTest, unittest.TestCase):
