@@ -96,7 +96,7 @@ to start a node.
 sets `setUp(self, dokerized=True)` to ensure running NOT in Docker
 5. Run the automation from `UrlShortenServiceTest.py`
 
-##### [Unittes Base]
+##### [Unittest Base]
 1. Make sure your `BaseTest.py` module configuration
 sets `setUp(self, dokerized=False)` to ensure running NOT in Docker
 2. Run the automation from `UrlShortenServiceTest.py`
