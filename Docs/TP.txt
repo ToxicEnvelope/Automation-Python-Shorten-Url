@@ -8,6 +8,7 @@ Feature: Url Shorten Service - https://bitly.com/
 1. insert a valid URL to input box and click on button.
 Expected:
 - given valid url, a new shorten url returned
+- both original and shor url will refirect to the same source
 
 -- (2) Functional--
 
