@@ -1,7 +1,5 @@
 # Automation-Python-Shorten-Url
-###This is a sample repository for Selenium + Python 3.x
-This repository made for purposes learning and education
-
+### This is a sample repository for Selenium + Python 3.x 
 
 # [Description]
 This Framework use `Python 3.x` inside,
