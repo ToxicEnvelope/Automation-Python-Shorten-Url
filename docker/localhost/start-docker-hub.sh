@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker run -p 4444:4444 --name locauto-hub selenium/hub
+docker run -p 4444:4444 --name autoloc-hub selenium/hub

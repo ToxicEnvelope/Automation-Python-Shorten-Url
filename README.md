@@ -70,6 +70,13 @@ We divide this framework to some modules
 
 #
 # HOW-TO
+##### [LOGS]
+Note that a log is already created by our first time test run.
+Make sure to view the log that located at `src.runtime.logs`
+for to ensure you're runnig on Docker / Localhost.
+* Expect `[BaseTest - Call "setUp" -> is_docker True]` for Docker
+* Expect `[BaseTest - Call "setUp" -> is_docker False]` for Localhost
+
 ##### [IMPORTANT Python Libs]
 1. In case your machine does't contain `Python 3.x`, please download it to your machine
 2. Once `Python 3.x` is installed, open your `commad-prompt` or `terminal`
@@ -85,10 +92,11 @@ from the following link : `https://store.docker.com/editions/community/docker-ce
 `./start-docker-hub.sh` 
 3. After you've done this, run `./start-chrome-node.sh` or `./start-firefox-node.sh`
 to start a node.
-4. Run the automation from `UrlShortenServiceTest.py`
-
+4. Make sure your `BaseTest.py` module configuration
+sets `setUp(self, dokerized=True)` to ensure running NOT in Docker
+5. Run the automation from `UrlShortenServiceTest.py`
 
 ##### [Unittes Base]
-1. Make sure your `BaseTest.py` module configure
-to manage the webdriver not in `Remote` mode
+1. Make sure your `BaseTest.py` module configuration
+sets `setUp(self, dokerized=False)` to ensure running NOT in Docker
 2. Run the automation from `UrlShortenServiceTest.py`

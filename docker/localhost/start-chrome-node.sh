@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker run --link locauto-hub:hub selenium/node-chrome
+docker run --link autoloc-hub:hub selenium/node-chrome
