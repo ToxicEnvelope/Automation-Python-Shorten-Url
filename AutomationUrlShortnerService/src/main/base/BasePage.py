@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import time
-from src.main.base.utils.Wait import Wait
+from AutomationUrlShortnerService.src.main.base.utils.Wait import Wait
 
 
 class BasePage(Wait):

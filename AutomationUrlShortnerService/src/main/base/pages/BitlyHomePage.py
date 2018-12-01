@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from src.main.base.BasePage import BasePage
+from AutomationUrlShortnerService.src.main.base.BasePage import BasePage
 
 
 class BitlyHomePage(BasePage, object):

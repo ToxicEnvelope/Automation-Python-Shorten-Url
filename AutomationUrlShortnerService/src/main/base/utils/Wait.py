@@ -28,7 +28,7 @@ class Wait:
 
     def wait_click(self, elem):
         """
-        Todo - Implementation of smart wait
+        Todo - Implementation of smart wait_click
         :param elem:
         :return:
         """
@@ -36,7 +36,7 @@ class Wait:
 
     def wait_send_keys(self, elem, phrase):
         """
-        Todo - Implementation of smart wait
+        Todo - Implementation of smart wait_send_keys
         :param elem:
         :param phrase:
         :return:
