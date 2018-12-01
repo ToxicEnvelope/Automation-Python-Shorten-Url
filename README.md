@@ -5,7 +5,7 @@ This repository made for purposes learning and education
 
 # [Description]
 This Framework use `Python 3.x` inside,
-We recommend you to visit `https://python.org` for reference.
+We recommend you to visit `https://www.python.org/` for reference.
 
 We divide this framework to some modules 
 
@@ -72,7 +72,7 @@ We divide this framework to some modules
 # HOW-TO
 ##### [DOCKER]
 1. If you use a docker, please make sure to install it 
-from the following link : `some_link`
+from the following link : `https://store.docker.com/editions/community/docker-ce-desktop-mac`
 2. Simply navigate to `./docker/localhost` and run the following command
 `./start-docker-hub.sh` 
 3. After you've done this, run `./start-chrome-node.sh` or `./start-firefox-node.sh`
