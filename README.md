@@ -1,11 +1,18 @@
 # Automation-Python-Shorten-Url
-### This is a sample repository for Selenium + Python 3.x 
+### This is a sample repository for Selenium + Python 3.x compatible for Docker.  
 
 # [Description]
 This Framework use `Python 3.x` inside,
 We recommend you to visit `https://www.python.org/` for reference.
 
 We divide this framework to some modules 
+
+#
+#### [GlobalConfig.py] `src.main.config.GlobalConfig`
+    GlobalConfig    -   This module responsible of the
+                        configuration of framework. 
+                        Will determine it runtime according
+                        to the Operating System and more...
 
 #
 #### [BasePage.py] `src.main.base.BasePage`
@@ -71,7 +78,7 @@ We divide this framework to some modules
 ##### [LOGS]
 Note that a log is already created by our first time test run.
 Make sure to view the log that located at `src.runtime.logs`
-for to ensure you're runnig on Docker / Localhost.
+for to ensure you're running on Docker / Localhost.
 * Expect `[BaseTest - Call "setUp" -> is_docker True]` for Docker
 * Expect `[BaseTest - Call "setUp" -> is_docker False]` for Localhost
 
@@ -83,6 +90,7 @@ and use the following commands:
 - `pip install unittest`        -   to ensure your unittest is up-to-date
 - `pip install selenium`        -   to install Selenium libraries
 
+#
 ##### [DOCKER]
 1. If you use a docker, please make sure to install it 
 from the following link : `https://store.docker.com/editions/community/docker-ce-desktop-mac`
@@ -92,9 +100,15 @@ from the following link : `https://store.docker.com/editions/community/docker-ce
 to start a node.
 4. Make sure your `BaseTest.py` module configuration
 sets `setUp(self, dokerized=True)` to ensure running IN Docker mode.
-5. Run the automation from `UrlShortenServiceTest.py`
+5. Run the automation from command-line using the following command `python -m unittest <package>/<test_module>`
 
+#
 ##### [Unittest Base]
 1. Make sure your `BaseTest.py` module configuration
 sets `setUp(self, dokerized=False)` to ensure running NOT in Docker mode.
-2. Run the automation from `UrlShortenServiceTest.py`
+2. Run the automation from command-line using the following command `python -m unittest <package>/<test_module>`
+
+#
+###### Run From CLI Example: 
+ 
+`$ python -m unittest src/test/e2e/UrlShortenServiceTest.py`

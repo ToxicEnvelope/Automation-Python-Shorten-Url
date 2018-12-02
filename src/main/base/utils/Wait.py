@@ -29,6 +29,7 @@ class Wait:
           waiting for visibility for webelement
     """
     def wait_visibility(self, elem_ref):
+        self.log.info('Wait - Calling on "wait_visibility" -> {0}'.format(elem_ref))
         elem = self.make_webelement(elem_ref)
         self._wait.until(EC.visibility_of_element_located, elem)
 
@@ -40,6 +41,7 @@ class Wait:
           waiting for presence for webelement
     """
     def wait_for_presence(self, elem_ref):
+        self.log.info('Wait - Calling on "wait_for_presence" -> {0}'.format(elem_ref))
         elem = self.make_webelement(elem_ref)
         self._wait.until(EC.presence_of_element_located, elem)
 
@@ -50,6 +52,7 @@ class Wait:
         - Construct a WebElement by given (how, using) core Locator of Selenium
     """
     def make_webelement(self, elem_tpl):
+        self.log.info('Wait - Calling on "make_webelement" -> {0}'.format(elem_tpl))
         by, loc = elem_tpl
         elem = self._driver.find_element((by, loc))
         return elem
@@ -61,6 +64,7 @@ class Wait:
           visible after render
     """
     def wait_until_page_loaded(self):
+        self.log.info('Wait - Calling on "wait_until_page_loaded"')
         self._wait.until(EC.visibility_of_element_located, (By.XPATH, "html"))
 
     """
@@ -70,6 +74,7 @@ class Wait:
           use smart waiting more efficiently
     """
     def wait_click(self, elem):
+        self.log.info('Wait - Calling on "wait_click" -> {0}'.format(elem))
         """
         Todo - Implementation of smart wait_click
         :param elem:
@@ -84,6 +89,7 @@ class Wait:
           use smart waiting more efficiently
     """
     def wait_send_keys(self, elem, phrase):
+        self.log.info('Wait - Calling on "wait_send_keys" -> {0} : {1}'.format(elem, phrase))
         """
         Todo - Implementation of smart wait_send_keys
         :param elem:

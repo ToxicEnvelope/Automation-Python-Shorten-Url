@@ -22,14 +22,14 @@ class BitlyHomePage(BasePage, object):
           that we want to work with in at the very start 
     """
     def init_elements(self):
-        self.log.info('Calling "init_elements"')
+        self.log.info('BitlyHomePage - Calling "init_elements"')
         try:
             self.URL_INPUT_FIELD = self._driver.find_element_by_xpath("//*[@id='shorten_url']")
             self.COOKIE_LAYOUT_DIALOG_X_BTN = self._driver.find_element_by_xpath("//*[@class='close-icon']")
             self.PROMO_DIALOG_X_BTN = self._driver.find_element_by_xpath("//*[@id='promo-close']")
             self.SHORTEN_BTN = self._driver.find_element_by_xpath("//*[@id='shorten_btn']")
         except Exception as err:
-            self.log.error('Error occurred {0}'.format(err))
+            self.log.error('BitlyHomePage - Error occurred {0}'.format(err))
             print('{0}'.format(err))
 
     """
@@ -42,7 +42,7 @@ class BitlyHomePage(BasePage, object):
           and return the results of the new shorten link
     """
     def shorten_link(self, link):
-        self.log.info('Calling "shorten_link" on {0}'.format(link))
+        self.log.info('BitlyHomePage - Calling "shorten_link" on {0}'.format(link))
         try:
             self.close_cookie_dialog()
             self.wait()
@@ -51,7 +51,7 @@ class BitlyHomePage(BasePage, object):
             self.close_promotion_dialog()
             return self.get_results()
         except Exception as err:
-            self.log.error('Error occurred {0}'.format(err))
+            self.log.error('BitlyHomePage - Error occurred {0}'.format(err))
             print('{0}'.format(err))
 
     """
@@ -61,12 +61,12 @@ class BitlyHomePage(BasePage, object):
           so it will close it
     """
     def close_cookie_dialog(self):
-        self.log.info('Calling "close_cookie_dialog"')
+        self.log.info('BitlyHomePage - Calling "close_cookie_dialog"')
         try:
             self.wait()
             self.click(self.COOKIE_LAYOUT_DIALOG_X_BTN)
         except Exception as err:
-            self.log.error('Error occurred {0}'.format(err))
+            self.log.error('BitlyHomePage - Error occurred {0}'.format(err))
             print('{0}'.format(err))
 
     """
@@ -76,12 +76,12 @@ class BitlyHomePage(BasePage, object):
           so it will close it
     """
     def close_promotion_dialog(self):
-        self.log.info('Calling "close_promotion_dialog"')
+        self.log.info('BitlyHomePage - Calling "close_promotion_dialog"')
         try:
             self.wait()
             self.click(self.PROMO_DIALOG_X_BTN)
         except Exception as err:
-            self.log.error('Error occurred {0}'.format(err))
+            self.log.error('BitlyHomePage - Error occurred {0}'.format(err))
             print('{0}'.format(err))
 
     """
@@ -92,13 +92,13 @@ class BitlyHomePage(BasePage, object):
           and return it's text value
     """
     def get_results(self):
-        self.log.info('Calling "get_results"')
+        self.log.info('BitlyHomePage - Calling "get_results"')
         try:
             self.wait()
             res_link = self._driver.find_element_by_css_selector("ul#most_recent_link a.short-url")
             return res_link.text
         except Exception as err:
-            self.log.error('Error occurred {0}'.format(err))
+            self.log.error('BitlyHomePage - Error occurred {0}'.format(err))
             print('{0}'.format(err))
 
     """
@@ -107,7 +107,7 @@ class BitlyHomePage(BasePage, object):
         :return -> the url of the page
     """
     def _get_url(self):
-        self.log.info('Calling "_get_url"')
+        self.log.info('BitlyHomePage - Calling "_get_url"')
         return self._url
 
     """
@@ -116,5 +116,5 @@ class BitlyHomePage(BasePage, object):
         :return -> the tile of the page
     """
     def _get_title(self):
-        self.log.info('Calling "_get_title"')
+        self.log.info('BitlyHomePage - Calling "_get_title"')
         return self._title
