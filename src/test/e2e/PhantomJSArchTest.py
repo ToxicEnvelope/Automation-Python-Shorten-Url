@@ -3,7 +3,7 @@ from src.test.BaseTest import BaseTest
 from src.main.base.pages.BitlyHomePage import BitlyHomePage
 
 
-class MyTestCase(BaseTest, unittest.TestCase):
+class PhantomJSArch(BaseTest, unittest.TestCase):
 
     link = 'https://github.com/ToxicEnvelope/Automation-Python-Shorten-Url'
     bitly_url = 'https://bitly.com'
