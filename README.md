@@ -17,13 +17,13 @@ We divide this framework to some modules
 #
 #### [BasePage.py] `src.main.base.BasePage`
     BasePage        -   This module responsible of the  
-                        main functionalitieso f selenium  
+                        main functionalitieso f selenium.  
 
 #
 #### [Wait.py] `src.main.base.utils.Wait`
     Wait            -   This module responsible of handling
                         smart waiting for different  
-                        type of scenarios in the DOM
+                        type of scenarios in the DOM.
 
 #
 #### [Logger.py] `src.main.base.utils.Logger`
@@ -31,12 +31,28 @@ We divide this framework to some modules
                         log and record all the actions 
                         taken by the framework and will
                         contain critical information for
-                        log analysis and errors during runtime 
+                        log analysis and errors during runtime. 
+
+#
+#### [Grid.py] `src.main.base.utils.Grid`
+    Grid            -   This module responsible to
+                        create a grid to be for advanced
+                        mesure of differences in a picture
+                        and map it via net-grid scalling
+                        relative to the picture taken. 
+
+#
+#### [VisualRegression.py] `src.main.base.utils.VisualRegression`
+    VR              -   This module responsible to 
+                        capture, save, analyze and 
+                        produce a result given two
+                        images and their differences
+                        by visual regression delta. 
 
 #
 #### [BitlyHomePage.py] `src.main.base.pages.BitlyHomePage`
     BitlyHomePage   -   This module represents the
-                        POM. It contains some functional
+                        POM. It contains some functional.
 
 #
 #### [BaseTes.py] `src.test.BaseTest`
@@ -57,10 +73,20 @@ We divide this framework to some modules
                             TestSuites and more...
 
 #
+#### [PhantomJSArchTest.py] `src.test.e2e.PhantomJSArchTest`
+    PhantomJSArchTest   -   This module represents the
+                            test of different sites online
+                            using ghostdriver calls, it 
+                            determin the differences of two
+                            pictures by matching them and
+                            producing the delta as result
+                            of their differences.
+
+#
 ##### [Docs] `./Docs`
     TP.txt          -   A sample manual Test Plan
                         for future implementation 
-                        and refrence for Manual Testing 
+                        and refrence for Manual Testing. 
 
 #
 ##### [Docker Configuration] `./docker/`
@@ -69,9 +95,9 @@ We divide this framework to some modules
 
 #
 ##### [Docker Scripts] `./docker/localhost/`
-    start-docker-hub.sh     -   Shell script that runs docker-hub
-    start-chrome-node.sh    -   Shell script that runs chrome-node 
-    start-firefox-node.sh   -   Shell script that runs firefox-node
+    start-docker-hub.sh     -   Shell script that runs docker-hub.
+    start-chrome-node.sh    -   Shell script that runs chrome-node. 
+    start-firefox-node.sh   -   Shell script that runs firefox-node.
 
 #
 # HOW-TO
@@ -79,34 +105,34 @@ We divide this framework to some modules
 Note that a log is already created by our first time test run.
 Make sure to view the log that located at `src.runtime.logs`
 for to ensure you're running on Docker / Localhost.
-* Expect `[BaseTest - Call "setUp" -> is_docker True]` for Docker
-* Expect `[BaseTest - Call "setUp" -> is_docker False]` for Localhost
+* Expect `[BaseTest - Call "setUp" -> is_docker True]` for Docker.
+* Expect `[BaseTest - Call "setUp" -> is_docker False]` for Localhost.
 
 ##### [IMPORTANT Python Libs]
 1. In case your machine does't contain `Python 3.x`, please download it to your machine
 2. Once `Python 3.x` is installed, open your `commad-prompt` or `terminal`
 and use the following commands:
-- `pip install --upgrade pip`   -   to ensure your pip is up-to-date
-- `pip install unittest`        -   to ensure your unittest is up-to-date
-- `pip install selenium`        -   to install Selenium libraries
+- `pip install --upgrade pip`   -   to ensure your pip is up-to-date.
+- `pip install unittest`        -   to ensure your unittest is up-to-date.
+- `pip install selenium`        -   to install Selenium libraries.
 
 #
 ##### [DOCKER]
 1. If you use a docker, please make sure to install it 
-from the following link : `https://store.docker.com/editions/community/docker-ce-desktop-mac`
+from the following link : `https://store.docker.com/editions/community/docker-ce-desktop-mac`.
 2. Simply navigate to `./docker/localhost` and run the following command
-`./start-docker-hub.sh` 
-3. After you've done this, run `./start-chrome-node.sh` or `./start-firefox-node.sh`
+`./start-docker-hub.sh` .
+3. After you've done this, run `./start-chrome-node.sh` or `./start-firefox-node.sh`.
 to start a node.
 4. Make sure your `BaseTest.py` module configuration
 sets `setUp(self, dokerized=True)` to ensure running IN Docker mode.
-5. Run the automation from command-line using the following command `python -m unittest <package>/<test_module>`
+5. Run the automation from command-line using the following command `python -m unittest <package>/<test_module>`.
 
 #
 ##### [Unittest Base]
 1. Make sure your `BaseTest.py` module configuration
 sets `setUp(self, dokerized=False)` to ensure running NOT in Docker mode.
-2. Run the automation from command-line using the following command `python -m unittest <package>/<test_module>`
+2. Run the automation from command-line using the following command `python -m unittest <package>/<test_module>`.
 
 #
 ###### Run From CLI Example: 
