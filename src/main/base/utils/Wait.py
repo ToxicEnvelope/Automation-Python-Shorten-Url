@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from src.main.base.utils.VisualRegression import VR
 from selenium.webdriver.common.by import By
 from src.main.base.utils.Logger import Logger
 from selenium.webdriver.support.ui import WebDriverWait
@@ -19,6 +20,7 @@ class Wait:
     """
     def __init__(self, driver):
         self._driver = driver
+        self._phantom = VR(self._driver)
         self._wait = WebDriverWait(self._driver, 15, 300)
 
     """
@@ -97,3 +99,11 @@ class Wait:
         :return:
         """
         pass
+
+    """
+        [Description]
+        get_PhantomDriver
+        :return -> return a PhantomJS WebDriver object        
+    """
+    def get_PhantomDriver(self):
+        return self._phantom
