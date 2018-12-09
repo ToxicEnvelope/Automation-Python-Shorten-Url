@@ -10,12 +10,16 @@ class BaseTest(object):
        Static constant of GlobalConfig
        for configuration management
    """
-    config = GlobalConfig()
+    config = GlobalConfig('chrome')
     """
         Static constant of Logger
         to handle runtime logs for analysis
     """
     log = Logger()
+    """
+        Docker flag variable
+    """
+    docker_flag = False
     """
         [Description]
         setUp
@@ -24,7 +28,7 @@ class BaseTest(object):
           If `dockerized=True` then docker session will take place,
           Otherwise local session will take place.
     """
-    def setUp(self, dockerized=False):
+    def setUp(self, dockerized=docker_flag):
         self.log.info('BaseTest - Calling on "setUp" -> is_docker {0}'.format(dockerized))
         if dockerized:
             self.log.critical("#########################################")
@@ -57,4 +61,3 @@ class BaseTest(object):
         self.log.info('BaseTest - Calling on "tearDown"')
         self.get_driver().close()
         self.get_driver().quit()
-
