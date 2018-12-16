@@ -27,7 +27,7 @@ class GlobalConfig(object):
           which operating system our machine running.
     """
     def platform_identifier(self, commands='chrome'):
-        self.logger.info('GlobalConfig - Calling on "platform_identifier" -> {0}'.format(commands))
+        self.logger.info('{0} - Calling on "platform_identifier" -> {1}'.format(__name__, commands))
         p = platform.platform().lower()
         commands = commands.lower()
         if p.startswith('win'):
@@ -49,7 +49,7 @@ class GlobalConfig(object):
         despite the Operating System type
     """
     def get_Driver(self, os, flag):
-        self.logger.info('GlobalConfig - Calling on "get_Driver" -> {0} : {1}'.format(os, flag))
+        self.logger.info('{0} - Calling on "get_Driver" -> {1} : {2}'.format(__name__, os, flag))
         if os.startswith('win') and flag.__eq__('chrome'):
             self.CHROME_PATH = '{0}.exe'.format(self.get_ChromeDriver())
         elif os.startswith('win') and flag.__eq__('phantomjs'):
@@ -67,7 +67,7 @@ class GlobalConfig(object):
         :return -> Executable ChromeDriver path 
     """
     def get_ChromeDriver(self):
-        self.logger.info('GlobalConfig - Calling on "get_ChromeDriver"')
+        self.logger.info('{0} - Calling on "get_ChromeDriver"'.format(__name__))
         USER_HOME = expanduser("~")
         PROJ_PATH = '{0}\\Desktop\\Git\\Automation-Python-Shorten-Url'.format(USER_HOME)
         BIN_PATH = '{0}\\src\\bin'.format(PROJ_PATH)
@@ -79,7 +79,7 @@ class GlobalConfig(object):
         :return -> Executable PhatomJSDriver path 
     """
     def get_PhantomDriver(self):
-        self.logger.info('GlobalConfig - Calling on "get_PhantomDriver"')
+        self.logger.info('{0} - Calling on "get_PhantomDriver"'.format(__name__))
         USER_HOME = expanduser("~")
         PROJ_PATH = '{0}\\Desktop\\Git\\Automation-Python-Shorten-Url'.format(USER_HOME)
         BIN_PATH = '{0}\\src\\bin'.format(PROJ_PATH)
@@ -91,7 +91,7 @@ class GlobalConfig(object):
         :return -> the screenshots directory path 
     """
     def get_ScreenshotDir(self):
-        self.logger.info('GlobalConfig - Calling on "get_ScreenshotDir"')
+        self.logger.info('{0} - Calling on "get_ScreenshotDir"'.format(__name__))
         USER_HOME = expanduser("~")
         PROJ_PATH = '{0}\\Desktop\\Git\\Automation-Python-Shorten-Url'.format(USER_HOME)
         SCREENSHOT_DIR = '{0}\\src\\test\\resources'.format(PROJ_PATH)
@@ -103,10 +103,10 @@ class GlobalConfig(object):
         :return -> the logs directory path 
     """
     def get_LogsDir(self):
-        self.logger.info('GlobalConfig - Calling on "get_LogsDir"')
+        self.logger.info('{0} - Calling on "get_LogsDir"'.format(__name__))
         USER_HOME = expanduser("~")
         PROJ_PATH = '{0}\\Desktop\\Git\\Automation-Python-Shorten-Url'.format(USER_HOME)
-        LOGS_DIR = '{0}\\runtime\\logs'.format(PROJ_PATH)
+        LOGS_DIR = '{0}\\src\\runtime\\logs'.format(PROJ_PATH)
         return LOGS_DIR
 
     """
@@ -115,7 +115,7 @@ class GlobalConfig(object):
         :return -> the results screenshots directory path 
     """
     def get_GhostLogDir(self):
-        self.logger.info('GlobalConfig - Calling on "get_GhostLogDir"')
+        self.logger.info('{0} - Calling on "get_GhostLogDir"'.format(__name__))
         return '{0}\\ghostlog'.format(self.get_LogsDir())
 
     """
@@ -124,7 +124,7 @@ class GlobalConfig(object):
         :return -> the grid screenshots directory path 
     """
     def get_GridDir(self):
-        self.logger.info('GlobalConfig - Calling on "get_GridDir"')
+        self.logger.info('{0} - Calling on "get_GridDir"'.format(__name__))
         return '{0}\\grid'.format(self.get_ScreenshotDir())
 
     """
@@ -133,5 +133,6 @@ class GlobalConfig(object):
         :return -> the results screenshots directory path 
     """
     def get_ResultsDir(self):
-        self.logger.info('GlobalConfig - Calling on "get_ResultsDir"')
+        self.logger.info('{0} - Calling on "get_ResultsDir"'.format(__name__))
+        self.logger.info('{0} - Calling on "get_ResultsDir"'.format(__name__))
         return '{0}\\results'.format(self.get_ScreenshotDir())

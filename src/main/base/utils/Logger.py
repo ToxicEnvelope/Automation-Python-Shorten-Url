@@ -5,7 +5,6 @@ import coloredlogs
 
 
 class Logger(object):
-
     """
         Static constant of
         the path of logs location

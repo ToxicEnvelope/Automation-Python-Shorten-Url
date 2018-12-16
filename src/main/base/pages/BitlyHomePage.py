@@ -22,7 +22,7 @@ class BitlyHomePage(BasePage, object):
           that we want to work with in at the very start 
     """
     def init_elements(self):
-        self.log.info('BitlyHomePage - Calling "init_elements"')
+        self.log.info('{0} - Calling "init_elements"'.format(__name__))
         try:
             self.URL_INPUT_FIELD = self._driver.find_element_by_xpath("//*[@id='shorten_url']")
             self.COOKIE_LAYOUT_DIALOG_X_BTN = self._driver.find_element_by_xpath("//*[@class='close-icon']")
@@ -42,7 +42,7 @@ class BitlyHomePage(BasePage, object):
           and return the results of the new shorten link
     """
     def shorten_link(self, link):
-        self.log.info('BitlyHomePage - Calling "shorten_link" on {0}'.format(link))
+        self.log.info('{0} - Calling "shorten_link" on {1}'.format(__name__, link))
         try:
             self.close_cookie_dialog()
             self.wait()
@@ -61,7 +61,7 @@ class BitlyHomePage(BasePage, object):
           so it will close it
     """
     def close_cookie_dialog(self):
-        self.log.info('BitlyHomePage - Calling "close_cookie_dialog"')
+        self.log.info('{0} - Calling "close_cookie_dialog"'.format(__name__))
         try:
             self.wait()
             self.click(self.COOKIE_LAYOUT_DIALOG_X_BTN)
@@ -76,7 +76,7 @@ class BitlyHomePage(BasePage, object):
           so it will close it
     """
     def close_promotion_dialog(self):
-        self.log.info('BitlyHomePage - Calling "close_promotion_dialog"')
+        self.log.info('{0} - Calling "close_promotion_dialog"'.format(__name__))
         try:
             self.wait()
             self.click(self.PROMO_DIALOG_X_BTN)
@@ -92,7 +92,7 @@ class BitlyHomePage(BasePage, object):
           and return it's text value
     """
     def get_results(self):
-        self.log.info('BitlyHomePage - Calling "get_results"')
+        self.log.info('{0} - Calling "get_results"'.format(__name__))
         try:
             self.wait()
             res_link = self._driver.find_element_by_css_selector("ul#most_recent_link a.short-url")
@@ -107,7 +107,7 @@ class BitlyHomePage(BasePage, object):
         :return -> the url of the page
     """
     def _get_url(self):
-        self.log.info('BitlyHomePage - Calling "_get_url"')
+        self.log.info('{0} - Calling "_get_url"'.format(__name__))
         return self._url
 
     """
@@ -116,5 +116,5 @@ class BitlyHomePage(BasePage, object):
         :return -> the tile of the page
     """
     def _get_title(self):
-        self.log.info('BitlyHomePage - Calling "_get_title"')
+        self.log.info('{0} - Calling "_get_title"'.format(__name__))
         return self._title

@@ -15,7 +15,7 @@ class Grid(object):
         - Constructor, construct a Grid object
     """
     def __init__(self):
-        self.capture_image()
+        pass
 
     """
         [Description]
@@ -27,6 +27,7 @@ class Grid(object):
         
     """
     def open_image(self, abs_img_path):
+        self.config.logger.debug('{0} - Calling on "open_image" -> {1}'.format(__name__, abs_img_path))
         return Image.open(abs_img_path)
 
     """
@@ -38,6 +39,7 @@ class Grid(object):
         create a drawable source from given Image object
     """
     def draw_image(self, screenshot):
+        self.config.logger.debug('{0} - Calling on "draw_image" -> {1}'.format(__name__, screenshot))
         return ImageDraw.Draw(screenshot)
 
     """
@@ -46,6 +48,7 @@ class Grid(object):
         - Main capture logic
     """
     def capture_image(self):
+        self.config.logger.debug('{0} - Calling on "capture_image"'.format(__name__))
         screenshot = self.open_image('{0}\\screen_staging.png'.format(self.config.get_ScreenshotDir()))
         columns = 60
         rows = 80

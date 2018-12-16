@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import time
 from selenium import webdriver
 from src.main.base.utils.Logger import Logger
 from src.main.base.config.GlobalConfig import GlobalConfig
@@ -12,14 +13,10 @@ class BaseTest(object):
    """
     config = GlobalConfig('chrome')
     """
-        Static constant of Logger
-        to handle runtime logs for analysis
-    """
-    log = Logger()
-    """
         Docker flag variable
     """
     docker_flag = False
+    #docker_flag = True
     """
         [Description]
         setUp
@@ -29,18 +26,18 @@ class BaseTest(object):
           Otherwise local session will take place.
     """
     def setUp(self, dockerized=docker_flag):
-        self.log.info('BaseTest - Calling on "setUp" -> is_docker {0}'.format(dockerized))
+        self.config.logger.info('{0} - Calling on "setUp" -> is_docker {1}'.format(__name__, dockerized))
         if dockerized:
-            self.log.critical("#########################################")
-            self.log.critical("# This session is USING Selenium/Docker #")
-            self.log.critical("#########################################")
+            self.config.logger.critical("#########################################")
+            self.config.logger.critical("# This session is USING Selenium/Docker #")
+            self.config.logger.critical("#########################################")
             self.driver = webdriver.Remote(
                 command_executor='http://localhost:4444/wd/hub',
                 desired_capabilities=DesiredCapabilities.CHROME)
         else:
-            self.log.critical("#############################################")
-            self.log.critical("# This session is NOT using Selenium/Docker #")
-            self.log.critical("#############################################")
+            self.config.logger.critical("#############################################")
+            self.config.logger.critical("# This session is NOT using Selenium/Docker #")
+            self.config.logger.critical("#############################################")
             self.driver = webdriver.Chrome(self.config.CHROME_PATH)
 
     """
@@ -49,7 +46,7 @@ class BaseTest(object):
         :return -> self.driver : WebDriver object
     """
     def get_driver(self):
-        self.log.info('BaseTest - Calling on "get_driver"')
+        self.config.logger.info('{0} - Calling on "get_driver"'.format(__name__))
         return self.driver
 
     """
@@ -58,6 +55,15 @@ class BaseTest(object):
         - This method responsible of terminating the browser process.
     """
     def tearDown(self):
-        self.log.info('BaseTest - Calling on "tearDown"')
+        self.config.logger.info('{0} - Calling on "tearDown"'.format(__name__))
         self.get_driver().close()
         self.get_driver().quit()
+
+    """
+        [Description]
+        get_timstamp(self)
+        :return -> timestamp : str
+    """
+    def get_timestamp(self):
+        self.config.logger.info('{0} - Calling on "get_timestamp"'.format(__name__))
+        return int(time.time().__str__()[:10])
